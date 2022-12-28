@@ -1,0 +1,13 @@
+version: "3.6"
+
+
+networks:
+  teste:
+
+services:
+  mongo:
+    image: "mongo"
+    networks:
+     - teste
+    ports:
+    - '27017-27019:27017-27019'
