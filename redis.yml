@@ -1,12 +1,8 @@
-kafkacat
--C consumer
-
--b brokers list
-
--t topic
-
--o -X ultimas X de cada partição
-
--L list topics
-
-kafkacat -C -b wn0-ssdp1z.wpdfqo1ilxkupjqzu3wz2mvgxh.bx.internal.cloudapp.net:9092,wn3-ssdp1z.wpdfqo1ilxkupjqzu3wz2mvgxh.bx.internal.cloudapp.net:9092,wn4-ssdp1z.wpdfqo1ilxkupjqzu3wz2mvgxh.bx.internal.cloudapp.net:9092,wn5-ssdp1z.wpdfqo1ilxkupjqzu3wz2mvgxh.bx.internal.cloudapp.net:9092,wn7-ssdp1z.wpdfqo1ilxkupjqzu3wz2mvgxh.bx.internal.cloudapp.net:9092,wn8-ssdp1z.wpdfqo1ilxkupjqzu3wz2mvgxh.bx.internal.cloudapp.net:9092 -t sw06sqlao.dbo.LancamentosCDCTratados -f 'Topic %t / Partition %p / Offset: %o / Timestamp: %T\nHeaders: %h\nKey (%K bytes): %k\nPayload (%S bytes): %s\n--\n'
+version: "3.9"
+services:
+  redis:
+    container_name: redisu-ru204
+    image: redis/redis-stack:latest
+    ports:
+      - "6379:6379"
+      - "8001:8001"
