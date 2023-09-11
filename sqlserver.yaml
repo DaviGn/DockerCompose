@@ -1,0 +1,8 @@
+services:
+  sqlserver:
+    image: mcr.microsoft.com/mssql/server:2022-latest
+    environment:
+      - SA_PASSWORD=My$trong@Password1
+      - ACCEPT_EULA=Y
+    ports:
+      - "1433:1433"
